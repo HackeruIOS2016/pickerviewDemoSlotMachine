@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="pfi-OL-tLz">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Picker-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PickerViewSlotMachineDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kVa-bg-YrJ">
+                                <rect key="frame" x="0.0" y="132" width="320" height="216"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="0uj-ac-Cg4"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="nGK-SV-aAo"/>
+                                </connections>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YgE-dY-wq4">
+                                <rect key="frame" x="273" y="430" width="31" height="30"/>
+                                <state key="normal" title="Spin"/>
+                                <connections>
+                                    <action selector="spinTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bq4-T9-rXD"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="kVa-bg-YrJ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="3R3-kj-rRw"/>
+                            <constraint firstItem="kVa-bg-YrJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="S2B-h3-iiV"/>
+                            <constraint firstItem="YgE-dY-wq4" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="gIV-cY-49C"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="YgE-dY-wq4" secondAttribute="bottom" constant="20" id="tQv-BO-h7b"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Picker" id="y87-XC-g6v"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="slotMachinePicker" destination="kVa-bg-YrJ" id="t3X-NO-Bcd"/>
+                        <segue destination="VkP-6T-gPp" kind="show" identifier="masterToDetail" id="ghw-80-sVe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="693" y="343"/>
+        </scene>
+        <!--Details-->
+        <scene sceneID="m2i-Qz-h7X">
+            <objects>
+                <viewController id="VkP-6T-gPp" customClass="DetailsViewController" customModule="PickerViewSlotMachineDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jk8-Td-TIM"/>
+                        <viewControllerLayoutGuide type="bottom" id="YsM-2t-cgo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="puv-Bp-Olu">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iij-KN-XL6">
+                                <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="iij-KN-XL6" firstAttribute="top" secondItem="jk8-Td-TIM" secondAttribute="bottom" id="4WK-JW-fPD"/>
+                            <constraint firstItem="iij-KN-XL6" firstAttribute="leading" secondItem="puv-Bp-Olu" secondAttribute="leading" id="HOr-zD-MQx"/>
+                            <constraint firstAttribute="trailing" secondItem="iij-KN-XL6" secondAttribute="trailing" id="LIm-5L-8Aw"/>
+                            <constraint firstItem="YsM-2t-cgo" firstAttribute="top" secondItem="iij-KN-XL6" secondAttribute="bottom" id="ifJ-Ki-d03"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Details" id="wB7-zN-CAN"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="detailImageView" destination="iij-KN-XL6" id="wvr-iW-nch"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IEo-N6-4TT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1067" y="343"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Tab-G5-zBn">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pfi-OL-tLz" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="adN-Ca-Qly">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="HlM-Xl-V7T"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E3Z-lg-t7b" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="312" y="343"/>
+        </scene>
+    </scenes>
+</document>
